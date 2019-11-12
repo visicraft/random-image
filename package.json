@@ -1,0 +1,50 @@
+{
+    "name": "random-image",
+    "version": "0.0.0",
+    "description": "NodeJS and Browser compatible library for generating different styles of images",
+    "keywords": [],
+    "main": "dist/random-image.umd.js",
+    "module": "dist/random-image.es5.js",
+    "typings": "dist/types/random-image.d.ts",
+    "files": [
+        "dist"
+    ],
+    "author": "Visicraft Working Group",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/visicraft/random-image"
+    },
+    "license": "MIT",
+    "engines": {
+        "node": ">=6.0.0"
+    },
+    "scripts": {
+        "build:docs": "typedoc --out docs --target es6 --theme minimal --mode file src",
+        "build:lib": "tsc --module commonjs && rollup -c rollup.config.js",
+        "prebuild:clean": "rimraf dist",
+        "watch:lib": "rollup -c rollup.config.ts -w",
+        "test:lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'"
+    },
+    "devDependencies": {
+        "@types/seedrandom": "^2.4.28",
+        "cross-env": "^6.0.0",
+        "lodash.camelcase": "^4.3.0",
+        "prettier": "^1.14.3",
+        "rimraf": "^3.0.0",
+        "rollup": "^1.23.1",
+        "rollup-plugin-commonjs": "^10.0.0",
+        "rollup-plugin-json": "^4.0.0",
+        "rollup-plugin-node-resolve": "^5.0.3",
+        "rollup-plugin-sourcemaps": "^0.4.2",
+        "rollup-plugin-typescript2": "^0.23.0",
+        "tslib": "^1.10.0",
+        "tslint": "^5.11.0",
+        "tslint-config-prettier": "^1.15.0",
+        "tslint-config-standard": "^8.0.1",
+        "typedoc": "^0.15.0",
+        "typescript": "^3.6.4"
+    },
+    "dependencies": {
+        "seedrandom": "^3.0.5"
+    }
+}
